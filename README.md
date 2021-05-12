@@ -1,3 +1,10 @@
+
+---------------******************---------------
+
+Live DEMO:  https://linkedinv2-web.web.app/
+
+---------------******************---------------
+
 <!-- technology we are going to use -->
 
 # react
@@ -5,6 +12,7 @@
 # react redux
 # react dom
 # styled components
+
 
 
 
@@ -59,7 +67,9 @@ firebase init
 firebase deploy
 
 
+---------------******************---------------
 
+https://linkedinv2-web.web.app/
 
 
 
