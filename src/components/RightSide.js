@@ -39,6 +39,10 @@ const RightSide = (props) => {
     <BannerCard>
       <img src="/images/ad-images.jpg" alt="ad-images" />
     </BannerCard>
+     <DevelopDesign>
+      <h2>Design and Develop by Adarsh Tripathi</h2>
+      <a href="https://github.com/adarshtiwari1998">Github Profile Link</a>
+    </DevelopDesign>
   </Container>
  )
 
@@ -137,5 +141,11 @@ img {
   height: 100%;
 }
 `;
+
+// designdevelop style
+const DevelopDesign = styled(FollowCard)`
+text-align: center;
+`;
+
 
 export default RightSide;

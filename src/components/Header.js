@@ -190,6 +190,10 @@ list-style-type: none;
 
     }
 }
+
+@media (max-width: 768px) {
+  overflow-X: scroll;
+}
 `;
 
 // navlist style
@@ -245,6 +249,13 @@ const SignOut = styled.div`
  transition-duration: 167ms;
  text-align: center;
  display: none;
+
+ @media (max-width: 768px) {
+  border-radius: 10px;
+    right: 60px;
+    top: -40px;
+    cursor: pointer;
+ }
 `;
 
 // nav user style

@@ -4,7 +4,9 @@ import { signInAPI } from "../actions"
 import { Redirect } from "react-router-dom";
 
 const Login = (props) => {
-  return (
+ 
+    return (
+
        <Container>
            {/* use for redirect the user after google login */}
            {props.user && <Redirect to="/home" />}
@@ -14,7 +16,7 @@ const Login = (props) => {
                </a>
                <div>
                    <Join>Join Now</Join>
-                   <SignIn>SignIn</SignIn>
+                   <SignIn onClick={() => props.signIn()}>SignIn</SignIn>
                </div>
            </Nav>
            <Section> 
@@ -22,18 +24,17 @@ const Login = (props) => {
              <h1>Welcome to your professional community</h1>
              <img src="/images/login-hero.svg" alt="login-hero-image" />
            </Hero>
-           <Form>
+             <Form>
               <Google onClick={() => props.signIn()}>
                <img src="/images/google.svg" alt="google-button" />
                Sign in with Google
               </Google> 
-              </Form>
-           </Section>
-          
-       </Container>
+            </Form>
+         </Section>
+     </Container>
+    
   )
-}
-
+};
 
 // container style
 
@@ -70,6 +71,7 @@ padding: 18px 12px;
 text-decoration: none;
 margin-right: 12px;
 border-radius: 4px;
+font-weight: 500;
 color: rgba(0, 0, 0, 0.6);
 
 &:hover {
@@ -90,6 +92,7 @@ font-size: 16px;
 font-weight: 600;
 line-height: 40px;
 padding: 10px 24px;
+cursor: pointer;
 text-align: center;
 background-color:rgba(0, 0, 0, 0);
 
@@ -172,6 +175,7 @@ align-items: center;
 background-color:#fff;
 height: 56px;
 width:100%;
+cursor: pointer;
 border-radius: 28px;
 box-shadow: inset 0 0 0 1px rgb(0 0 0 / 60%), 
 inset 0 0 0 2px rgb(0 0 0 / 0%) inset 0 0 0 1px rgb(0 0 0 / 0);
