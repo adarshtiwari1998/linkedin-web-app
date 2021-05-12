@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { signInAPI } from "../actions"
 import { Redirect } from "react-router-dom";
+import "../styles/Login.css";
 
 const Login = (props) => {
  
     return (
-
+      
        <Container>
            {/* use for redirect the user after google login */}
            {props.user && <Redirect to="/home" />}
@@ -22,7 +23,7 @@ const Login = (props) => {
            <Section> 
             <Hero>
              <h1>Welcome to your professional community</h1>
-             <img src="/images/login-hero.svg" alt="login-hero-image" />
+             <img src="/images/hero-image-v2.svg" alt="login-hero-image" />
            </Hero>
              <Form>
               <Google onClick={() => props.signIn()}>
@@ -31,13 +32,109 @@ const Login = (props) => {
               </Google> 
             </Form>
          </Section>
+         <Section> 
+             <SearchCta>
+                 <JobsFinderCta>
+                 <JobsFinderCtaHeader>
+               <h2>Find open jobs and internships</h2>
+               </JobsFinderCtaHeader>
+                 </JobsFinderCta>
+           <SuggestedSearch>
+               <SeeMoreLessListMain>
+               <SeeMoreLessListHeader>
+               <p>SUGGESTED SEARCHES</p>
+               </SeeMoreLessListHeader>
+               <SeeMoreLessList>
+                   <ul className="seemorelesslist ul">
+                       <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                               Engineering
+                           </a>
+                           
+                       </li>
+                       <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Business Development
+                           </a>
+                           
+                       </li>
+                       <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Finance
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Administrative Assistant
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Retail Associate
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Customer Service
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Operations
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Information Technology
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Marketing
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Human Resources
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Real Estate
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Real Estate
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Entrepreneurship
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                           Entrepreneurship
+                           </a>
+                          </li>
+                          <li className="seemorelesslist li">
+                           <a className="seemorelesslist a">
+                          Research
+                           </a>
+                          </li>
+                   </ul>
+                </SeeMoreLessList>
+               </SeeMoreLessListMain>
+           </SuggestedSearch>
+             </SearchCta>
+         </Section>
      </Container>
     
   )
 };
 
 // container style
-
 const Container = styled.div`
  padding: 0;
 `;
@@ -104,7 +201,7 @@ background-color:rgba(0, 0, 0, 0);
 `;
 
 // section style
-const Section = styled.a`
+const Section = styled.section`
 display: flex;
 flex-wrap: wrap;
 position: relative;
@@ -118,9 +215,21 @@ min-height: 700px;
 margin: auto;
 padding: 60px 0;
 
+::before {
+    content: '';
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: -2;
+}
+
 @media (max-width: 768px) {
     margin: auto;
+    max-width: 100vw;
     min-height: 0px;
+    padding-top: calc(64px + 56px);
 }
 `;
 
@@ -133,7 +242,7 @@ h1 {
     font-size: 56px;
     font-family: sans-serif;
     color: #2977c9;
-    font-weight: 200;
+    font-weight: 500;
     line-height: 70px;
 
     @media (max-width: 768px) {
@@ -150,7 +259,8 @@ width: 700px;
 height: 670px;
 position: absolute;
 bottom: 122px;
-right: -100px;
+right: -130px;
+overflow: hidden;
 
 @media (max-width: 768px){
     top: 230px;
@@ -189,6 +299,154 @@ color: rgba(0, 0, 0, 0.60);
     color: rgba(0, 0, 0, 0.75);
 }
 `;
+
+
+// new css for bottom section
+
+// searchcta style
+const SearchCta = styled.div`
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    @media (max-width: 768px) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+`;
+// jobsfindercta style
+const JobsFinderCta = styled.div`
+   min-width: 408px;
+    margin-right: 72px;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+
+    @media (max-width: 768px) {
+    min-width: 100%;
+    margin: 0 0 24px 0;
+    }
+`;
+
+// jobsfinderctaheader style
+const JobsFinderCtaHeader = styled.div`
+    font-size: 48px;
+    line-height: 1.16667;
+    font-weight: 400;
+    color: rgba(0,0,0,0.9);
+    font-family: sans-serif;
+    line-height: 60px;
+
+    @media (max-width: 768px) {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    }
+
+`;
+
+
+// suggested style
+const SuggestedSearch = styled.div`
+    width: 100%;
+    -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+`;
+
+// seemorelesslistmain style
+const SeeMoreLessListMain = styled.div`
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+`;
+
+// SeeMoreLessListHeader style
+const SeeMoreLessListHeader = styled.div`
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+    text-transform: uppercase;
+    line-height: 20px;
+    margin-bottom: 20px;
+`;
+// SeeMoreLessList style
+const SeeMoreLessList = styled.div`
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+
+    ul {
+        display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    }
+
+    li {
+        text-align: left;
+        list-style-type: none;
+    }
+
+    a {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    min-height: 56px;
+    height: auto;
+    width: auto;
+    float: left;
+    background-color: rgba(0,0,0,0.08);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 28px;
+    padding: 8px 20px;
+    margin-bottom: 12px;
+    margin: 0 6px 8px 0;
+    vertical-align: middle;
+    z-index: 0;
+    -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    -webkit-transition-property: background-color,color,-webkit-box-shadow;
+    -webkit-transition-duration: 167ms;
+    position: relative;
+    overflow: hidden;
+    outline-width: 2px;
+    -webkit-box-sizing: border-box;
+    border: 0;
+    &:hover {
+        background-color: rgba(0,0,0,0.22);
+    }
+    }
+`;
+
+
+
 
 
 // rudux section start
