@@ -146,9 +146,9 @@ const Login = (props) => {
          <JoinOurLinkedinHeader>
           Join your colleagues, classmates, and friends on LinkedIn.
      </JoinOurLinkedinHeader>
-         <JoinOurLinkedinGetStarted>
+         <JoinOuśrLinkedinGetStarted>
             Get Started
-         </JoinOurLinkedinGetStarted>
+         </JoinOuśrLinkedinGetStarted>
      </JoinOurLinkedinCommunity>
      </SectionJoinOurLinkedinCommunity>
      </Container>
