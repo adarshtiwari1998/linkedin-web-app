@@ -303,7 +303,7 @@ overflow: hidden;
 
 @media (max-width: 768px){
     top: 230px;
-    min-width: 374px;
+    /* min-width: 374px; */
     width: 320px;
     position: initial;
     height: 240px;
