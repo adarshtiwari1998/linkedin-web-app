@@ -32,17 +32,17 @@ const Login = (props) => {
               </Google> 
             </Form>
          </Section>
-         <Section> 
+         <SectionJobsFinder> 
              <SearchCta>
                  <JobsFinderCta>
                  <JobsFinderCtaHeader>
-               <h2>Find open jobs and internships</h2>
+               Find open jobs and internships
                </JobsFinderCtaHeader>
                  </JobsFinderCta>
            <SuggestedSearch>
                <SeeMoreLessListMain>
                <SeeMoreLessListHeader>
-               <p>SUGGESTED SEARCHES</p>
+               <p>RECOMMENDED JOBS FOR YOU</p>
                </SeeMoreLessListHeader>
                <SeeMoreLessList>
                    <ul className="seemorelesslist ul">
@@ -128,7 +128,29 @@ const Login = (props) => {
                </SeeMoreLessListMain>
            </SuggestedSearch>
              </SearchCta>
-         </Section>
+         </SectionJobsFinder>
+      <SectionTalentedFinder>
+     <TalentedFinder>
+            <TalentedFinderHeader>
+                Post your job and find the people you need
+            </TalentedFinderHeader>
+            <TalentedFinderPostJobs>
+            <a>
+             Post a job
+             </a>
+            </TalentedFinderPostJobs>
+        </TalentedFinder>
+     </SectionTalentedFinder>
+     <SectionJoinOurLinkedinCommunity>
+     <JoinOurLinkedinCommunity>
+         <JoinOurLinkedinHeader>
+          Join your colleagues, classmates, and friends on LinkedIn.
+     </JoinOurLinkedinHeader>
+         <JoinOurLinkedinGetStarted>
+            Get Started
+         </JoinOurLinkedinGetStarted>
+     </JoinOurLinkedinCommunity>
+     </SectionJoinOurLinkedinCommunity>
      </Container>
     
   )
@@ -208,6 +230,7 @@ position: relative;
 align-items: center;
 align-content: start;
 padding-bottom: 138px;
+-webkit-box-align: center;
 padding-top: 40px;
 width: 100%;
 max-width: 1128px;
@@ -215,21 +238,10 @@ min-height: 700px;
 margin: auto;
 padding: 60px 0;
 
-::before {
-    content: '';
-    width: 100vw;
-    height: 100%;
-    top: 0;
-    right: 0;
-    position: absolute;
-    z-index: -2;
-}
-
 @media (max-width: 768px) {
     margin: auto;
     max-width: 100vw;
     min-height: 0px;
-    padding-top: calc(64px + 56px);
 }
 `;
 
@@ -247,9 +259,10 @@ h1 {
 
     @media (max-width: 768px) {
         text-align: center;
-        font-size: 20px;
-        width: 100%;
-        line-height: 2;
+        font-size: 32px;
+        width: unset;
+        line-height: 40px;
+        padding-bottom: 12px;
     }
 }
 
@@ -258,15 +271,21 @@ z-index: 1;
 width: 700px;
 height: 670px;
 position: absolute;
-bottom: 122px;
-right: -130px;
+bottom: 156px;
+right: -150px;
 overflow: hidden;
 
 @media (max-width: 768px){
     top: 230px;
-    width: initial;
+    min-width: 374px;
+    width: 320px;
     position: initial;
-    height: initial;
+    height: 240px;
+    bottom: calc(-64px);
+    /* height: 240px;
+    min-width: 374px;
+    position: absolute;
+    bottom: calc(-64px); */
 }
 }
 `;
@@ -301,8 +320,33 @@ color: rgba(0, 0, 0, 0.60);
 `;
 
 
-// new css for bottom section
+// css for second section
+// sectionjobfinder css
+const SectionJobsFinder = styled.section`
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1128px;
+    /* min-height: 840px; */
+    padding: 60px 0;
+    position: relative;
+    margin: auto;
+    min-height: 0;
 
+    @media (max-width: 768px) {
+    margin: auto;
+    max-width: 100vw;
+    min-height: 0px;
+    padding: 56px 3px;
+    }
+ 
+`;
 // searchcta style
 const SearchCta = styled.div`
     width: 100%;
@@ -336,12 +380,11 @@ const JobsFinderCta = styled.div`
 `;
 
 // jobsfinderctaheader style
-const JobsFinderCtaHeader = styled.div`
-    font-size: 48px;
+const JobsFinderCtaHeader = styled.h2`
+    font-size: 50px;
     line-height: 1.16667;
     font-weight: 400;
     color: rgba(0,0,0,0.9);
-    font-family: sans-serif;
     line-height: 60px;
 
     @media (max-width: 768px) {
@@ -442,6 +485,141 @@ const SeeMoreLessList = styled.div`
     &:hover {
         background-color: rgba(0,0,0,0.22);
     }
+    }
+`;
+
+
+//css for third Section
+//section talendted finder css
+const SectionTalentedFinder = styled(SectionJobsFinder)`
+`;
+// talendted finder style
+const TalentedFinder = styled.div`
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 70px 0;
+
+    @media (max-width: 768px) {
+        -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 56px 16px;
+    }
+ 
+`;
+// talendted finder header style
+const TalentedFinderHeader = styled.h2`
+    width: calc(408px + 5px);
+    margin-right: calc(72px - 5px);
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #B24020;
+    line-height: 50px;
+
+    @media (max-width: 768px) {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    width: unset;
+    margin-bottom: 24px;
+    }
+    
+`;
+
+// talendted finder post jobs style
+const TalentedFinderPostJobs = styled.a`
+    font-size: 20px;
+    border: solid 1px rgba(0,0,0,0.6);
+    background: transparent;
+    line-height: 1.4;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    min-height: 56px;
+    height: auto;
+    width: auto;
+    float: left;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 28px;
+    -webkit-box-sizing: border-box;
+    padding: 8px 20px;
+    margin-bottom: 12px;
+
+    &:hover {
+        background-color: rgba(0,0,0,0.22);
+    }
+ 
+`;
+
+
+//css for Fourth Section
+//section joinourlinkedincommunity css
+const SectionJoinOurLinkedinCommunity = styled(SectionTalentedFinder)`
+min-height: 840px;
+`;
+
+//joinourlinkedincommunity css
+const JoinOurLinkedinCommunity = styled.div`
+    width: 100%;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+
+    @media (min-width: 1161px) and (min-width: 1161px) {
+    ::after {
+    right: calc((0px - 100vw) / 12);
+    content: '';
+    width: 100vw;
+    position: absolute;
+    height: 842px;
+    z-index: -1;
+    background: url("https://static-exp1.licdn.com/sc/h/2vt8plqbv2l2pi6kxm89bqs59") repeat-x bottom/auto 100%;
+    bottom: 0;
+}
+    }
+`;
+
+//section joinourlinkedinheader css
+const JoinOurLinkedinHeader = styled.h2`
+    font-size: 58px;
+    color: #2977c9;
+    font-weight: 200;
+    font-family: sans-serif;
+    line-height: 70px;
+    margin: 20px 0 40px 0;
+    word-break: keep-all;
+`;
+
+//section joinourlinkedinhgetstarted css
+const JoinOurLinkedinGetStarted = styled(TalentedFinderPostJobs)`
+    background-color: #0a66c2;
+    font-weight: normal;
+    color: #fff;
+    border: none;
+    outline: none;
+
+    &:hover {
+        background-color: rgba(0, 65, 130);
     }
 `;
 
