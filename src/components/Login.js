@@ -141,11 +141,37 @@ const Login = (props) => {
             </TalentedFinderPostJobs>
         </TalentedFinder>
      </SectionTalentedFinder>
-     <SectionJoinOurLinkedinCommunity>
+     <SectionProductCta>
+    <ProductCta>
+    <PeopleCta>
+    <img class="people-cta__illustration flip-rtl lazy-loaded" 
+    alt="Connect with people who can help" 
+    aria-hidden="true" 
+    src="https://static-exp1.licdn.com/sc/h/b1fxwht7hdbeusleja7ciftsj" />
+    <PeopleCtaContent>
+    <h2>Connect with people who can help</h2>
+    <a>Find People You know</a>
+    </PeopleCtaContent>
+     </PeopleCta>
+    <LearningCta>
+    <img class="people-cta__illustration flip-rtl lazy-loaded" 
+    alt="Connect with people who can help" 
+    aria-hidden="true" 
+    src="https://static-exp1.licdn.com/sc/h/dkfub4sc7jgzg3o31flfr91rv" />
+    <LearningCtaContent>
+    <h2>Learn the skills that can help you now</h2>
+    <a>Choose a Topic to Learn About 
+    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="artdeco-icon lazy-loaded" focusable="false"><path d="M5 9h14l-6.2 6.7c-.2.2-.5.3-.8.3-.3 0-.6-.1-.8-.3L5 9z" fill="rgba(0, 0, 0, 0.6)"></path></svg></span>
+    </a>
+    </LearningCtaContent>
+    </LearningCta>
+    </ProductCta>
+</SectionProductCta>
+    <SectionJoinOurLinkedinCommunity>
      <JoinOurLinkedinCommunity>
          <JoinOurLinkedinHeader>
-          Join your colleagues, classmates, and friends on LinkedIn.
-     </JoinOurLinkedinHeader>
+             <h2> Join your colleagues, classmates, and friends on LinkedIn.</h2>
+        </JoinOurLinkedinHeader>
          <JoinOurLinkedinGetStarted>
             Get Started
          </JoinOurLinkedinGetStarted>
@@ -572,11 +598,247 @@ const TalentedFinderPostJobs = styled.a`
  
 `;
 
-
 //css for Fourth Section
-//section joinourlinkedincommunity css
+//section sectionproductcta css
+const SectionProductCta = styled(SectionTalentedFinder)`
+min-height: 0;
+`;
+
+//section productcta css
+const ProductCta = styled.div`
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 60px 0;
+
+    @media (max-width: 768px) {
+        -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    }
+
+`;
+
+//section peoplecta css
+const PeopleCta = styled.div`
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 100%;
+    margin-right: 16px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    margin: 0 0 56px;
+    }
+
+    img {
+        -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    height: auto;
+    max-width: 300px;
+    margin: 0 72px 56px 0;
+
+    @media (max-width: 768px) {
+        max-width: 240px;
+    margin-bottom: 32px;
+    height: 192px;
+    }
+    }
+`;
+//section peoplecontent css
+const PeopleCtaContent = styled.div`
+    width: 456px;
+    margin: auto 0;
+
+    @media (max-width: 768px) {
+        width: 100%;
+      }
+
+    h2 {
+    font-size: 48px;
+    line-height: 1.16667;
+    font-weight: 400;
+    color: rgba(0,0,0,0.9);
+    font-family: sans-serif;
+    line-height: 60px;
+    font-weight: 200;
+    margin-bottom: 40px;
+
+    @media (max-width: 768px) {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 24px;
+    }
+    
+}
+
+a {
+    font-size: 20px;
+    border: solid 1px rgba(0,0,0,0.6);
+    background: transparent;
+    line-height: 1.4;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    min-height: 56px;
+    -webkit-box-sizing: border-box;
+    height: auto;
+    width: auto;
+    float: left;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 28px;
+    padding: 8px 20px;
+    margin-bottom: 12px;
+
+    @media (max-width: 768px) {
+        min-height: 48px;
+    }
+}
+`;
+
+//learningcta
+const LearningCta = styled.div`
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 100%;
+    margin-right: 16px;
+    @media (max-width: 768px) {
+        width: 100%;
+    margin: 0 0 56px;
+    }
+
+    :last-child {
+        margin-right: 0;
+
+        @media (max-width: 768px) {
+            margin-bottom: 8px;
+        }
+    }
+
+    img {
+        -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    height: auto;
+    max-width: 300px;
+    margin: 0 72px 56px 0;
+    @media (max-width: 768px) {
+        max-width: 240px;
+    margin-bottom: 32px;
+    height: 192px;
+    }
+    }
+`;
+
+const LearningCtaContent = styled.div`
+    width: 456px;
+    margin: auto 0;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
+    h2 {
+    margin-bottom: 40px;
+    font-size: 48px;
+    line-height: 1.16667;
+    font-weight: 400;
+    color: rgba(0,0,0,0.9);
+    font-family: sans-serif;
+    line-height: 60px;
+    font-weight: 200;
+
+    @media (max-width: 768px) {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 24px;
+    }
+    }
+    a {
+    font-size: 20px;
+    border: solid 1px rgba(0,0,0,0.6);
+    background: transparent;
+    line-height: 1.4;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    min-height: 56px;
+    -webkit-box-sizing: border-box;
+    height: auto;
+    width: 360px;
+    max-width: 100%;
+    float: left;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin-bottom: 12px;
+
+    @media (max-width: 768px){
+        min-height: 48px;
+    }
+}
+span {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+
+}
+`;
+
+
+
+//css for Fifth Section
+//sectionjoinourlinkedincommunity css
 const SectionJoinOurLinkedinCommunity = styled(SectionTalentedFinder)`
 min-height: 840px;
+
+@media (max-width: 768px) {
+    max-width: 100vw;
+    min-height: 0;
+}
 `;
 
 //joinourlinkedincommunity css
@@ -585,7 +847,11 @@ const JoinOurLinkedinCommunity = styled.div`
     -ms-flex-item-align: start;
     align-self: flex-start;
 
-    @media (min-width: 1161px) and (min-width: 1161px) {
+    @media (max-width: 768px) {
+   height: 100%;
+    padding: 0;
+    }
+
     ::after {
     right: calc((0px - 100vw) / 12);
     content: '';
@@ -595,12 +861,26 @@ const JoinOurLinkedinCommunity = styled.div`
     z-index: -1;
     background: url("https://static-exp1.licdn.com/sc/h/2vt8plqbv2l2pi6kxm89bqs59") repeat-x bottom/auto 100%;
     bottom: 0;
-}
+
+    @media (max-width: 768px) {
+        display: none;
+    }
     }
 `;
 
 //section joinourlinkedinheader css
-const JoinOurLinkedinHeader = styled.h2`
+const JoinOurLinkedinHeader = styled.div`
+    width: 100%;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+
+   @media (max-width: 768px){
+    height: 100%;
+    padding: 0;
+    width: 100%;
+}
+   
+   h2 {
     font-size: 58px;
     color: #2977c9;
     font-weight: 200;
@@ -608,6 +888,14 @@ const JoinOurLinkedinHeader = styled.h2`
     line-height: 70px;
     margin: 20px 0 40px 0;
     word-break: keep-all;
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 24px;
+    }
+ }
 `;
 
 //section joinourlinkedinhgetstarted css
@@ -617,11 +905,16 @@ const JoinOurLinkedinGetStarted = styled(TalentedFinderPostJobs)`
     color: #fff;
     border: none;
     outline: none;
+    
 
     &:hover {
         background-color: rgba(0, 65, 130);
     }
 `;
+
+
+
+
 
 
 
